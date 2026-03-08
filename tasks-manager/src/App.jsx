@@ -4,28 +4,25 @@
 // import '@fontsource/roboto/700.css';
 
 import { configureStore } from '@reduxjs/toolkit'
-import {provider} from 'react-redux'
+import { Provider} from 'react-redux'
 import { useState } from 'react'
 import { Routes, Route, Router } from 'react-router-dom'
+
 import './App.css'
 import Home from './components/Home'
 import  Login  from './components/Login';
+import {store} from "./features/store"
+
 
 function App() {
 
-  const myStore=configureStore({
-    reducer:{
-
-    }
-  })
-
   return (
     <>
-        <Provider store={myStore}>
+        <Provider store={store}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Counter" element={<Counter />} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/Login" element={<Login/>} />
+            
           </Routes>
         </Provider>
     </>
